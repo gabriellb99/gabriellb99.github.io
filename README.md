@@ -16,4 +16,6 @@ A parte tendrás una foto de una placa con los componentes situados correctament
 |Los conectores internos y externos|
 
 ## Creadores de la página
-Rafael Ramírez Medina / Gabriel López Bellido
+Rafael Ramírez Medina: Edición de CSS de la página HTML.
+
+Gabriel López Bellido: Creador de la página HTML.
