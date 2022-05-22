@@ -1,0 +1,692 @@
+{
+	"info": {
+		"_postman_id": "079a9e0a-d990-41b4-a98d-ebd4b03b7676",
+		"name": "SOS2122-10 Energy-Consumptions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "energy-consumptions GET Cargar datos iniciales",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}/loadInitialData",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					],
+					"path": [
+						"loadInitialData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions GET Global",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Responsse is an Array\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(Array.isArray(jsonData)).to.eql(true);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Responsse has contact\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.be.at.least(1);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions GET Pais",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Responsse is an Array\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(Array.isArray(jsonData)).to.eql(true);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Responsse has contact\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.be.at.least(1);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}/belgium",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					],
+					"path": [
+						"belgium"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions GET Pais y Año",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an Object\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(typeof jsonData == \"object\").to.eql(true);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}/belgium/2014",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					],
+					"path": [
+						"belgium",
+						"2014"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions  GET Año",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Responsse is an Array\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(Array.isArray(jsonData)).to.eql(true);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Responsse has contact\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.be.at.least(1);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Check if year==2014\", function () {\r",
+							"\tvar jsonData = pm.response.json();\r",
+							"\tfor(var i = 0; i<jsonData.length;i++){\r",
+							"\t\tpm.expect(jsonData[i].year).to.eql(2014);\r",
+							"\t};\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}?year=2014",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					],
+					"query": [
+						{
+							"key": "year",
+							"value": "2014"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions GET Global con Paginación",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Responsse is an Array\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(Array.isArray(jsonData)).to.eql(true);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Responsse has contact\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.be.at.least(1);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}?offset=2&limit=3",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "2"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions GET Global con From y To",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Responsse is an Array\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(Array.isArray(jsonData)).to.eql(true);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Responsse has at least 1 element\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.length).to.be.at.least(1);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"From <= to\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    var from = pm.request.url.query.toObject().from;\r",
+							"    var to = pm.request.url.query.toObject().to;\r",
+							"    pm.expect(from<=to).to.be.eql(true);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}?from=2014&to=2016",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					],
+					"query": [
+						{
+							"key": "from",
+							"value": "2014"
+						},
+						{
+							"key": "to",
+							"value": "2016"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumption POST de una lista de resursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 400ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"spain\",\r\n\"year\": 2003,\r\n\"percentages_access_elecetricity\": 74.5,\r\n\"non_renewable_energy_consumptions\": 48.26,\r\n\"renewable_energy_consumptions\": 51.74\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions POST recurso específico",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 400ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"belgium\",\r\n\"year\": 2003,\r\n\"percentages_access_elecetricity\": 74.5,\r\n\"non_renewable_energy_consumptions\": 48.26,\r\n\"renewable_energy_consumptions\": 51.74\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}/belgium",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					],
+					"path": [
+						"belgium"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions PUT de una lista de recursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 405\", function () {\r",
+							"    pm.response.to.have.status(405);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"belgium\",\r\n\"year\": 2014,\r\n\"percentages_access_elecetricity\": 81,\r\n\"non_renewable_energy_consumptions\": 48.26,\r\n\"renewable_energy_consumptions\": 51.74\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions PUT de un recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"belgium\",\r\n\"year\": 2014,\r\n\"percentages_access_elecetricity\": 81,\r\n\"non_renewable_energy_consumptions\": 48.26,\r\n\"renewable_energy_consumptions\": 51.74\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}/belgium/2014",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					],
+					"path": [
+						"belgium",
+						"2014"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions PUT FALLO de un recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"belgium\",\r\n\"year\": 2014,\r\n\"percentages_access_elecetricity\": 81,\r\n\"non_renewable_energy_consumptions\": 48.26,\r\n\"renewable_energy_consumptions\": 51.74\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}/brazil/2014",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					],
+					"path": [
+						"brazil",
+						"2014"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions POST FALLO JSON de una lista de resursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 400ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"belgium\",\r\n\"day\": 14,\r\n\"percentages_access_elecetricity\": 81,\r\n\"non_renewable_energy_consumptions\": 48.26,\r\n\"renewable_energy_consumptions\": 51.74\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions POST FALLO de una lista de resursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 409\", function () {\r",
+							"    pm.response.to.have.status(409);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 400ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"country\": \"belgium\",\r\n\"year\": 2014,\r\n\"percentages_access_elecetricity\": 100,\r\n\"non_renewable_energy_consumptions\": 90.88,\r\n\"renewable_energy_consumptions\": 9.12\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions GET FALLO por País",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}/poland",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					],
+					"path": [
+						"poland"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions DELETE de un recurso",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}/belgium/2014",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					],
+					"path": [
+						"belgium",
+						"2014"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "energy-consumptions DELETE de una lista de recursos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}{{API_ENERGY}}",
+					"host": [
+						"{{HOST}}{{API_ENERGY}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

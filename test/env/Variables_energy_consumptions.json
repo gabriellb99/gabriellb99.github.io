@@ -1,0 +1,21 @@
+{
+	"id": "3a7e521d-8b30-4358-8a7e-a80113f3e9b1",
+	"name": "API",
+	"values": [
+		{
+			"key": "HOST",
+			"value": "https://sos2122-10.herokuapp.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "API_ENERGY",
+			"value": "/api/v2/energy-consumptions",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2022-04-02T11:50:14.282Z",
+	"_postman_exported_using": "Postman/9.15.10"
+}

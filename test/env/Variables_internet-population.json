@@ -1,0 +1,21 @@
+{
+	"id": "7dbf3228-5528-469c-97d5-76d4ef3acd31",
+	"name": "Heroku",
+	"values": [
+		{
+			"key": "HOST",
+			"value": "https://sos2122-10.herokuapp.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "INTERNET",
+			"value": "/api/v2/internet-population",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2022-04-25T07:02:31.389Z",
+	"_postman_exported_using": "Postman/9.15.10"
+}
